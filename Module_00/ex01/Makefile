@@ -6,7 +6,7 @@
 #    By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 00:10:44 by aprahin           #+#    #+#              #
-#    Updated: 2023/02/17 17:14:25 by grenaud-         ###   ########.fr        #
+#    Updated: 2023/03/02 16:24:34 by grenaud-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,8 +55,9 @@ IDIR		=	include/
 
 # SOURCES
 
-SRC			=	contact.hpp \
-				phonebook.hpp \
+SRC			=	main.cpp \
+				phonebook.cpp \
+				contact.cpp \
 
 SRCS		=	$(addprefix $(DIR), $(SRC))
 
