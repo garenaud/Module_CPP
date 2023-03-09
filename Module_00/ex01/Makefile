@@ -6,7 +6,7 @@
 #    By: grenaud- <grenaud-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/09 00:10:44 by aprahin           #+#    #+#              #
-#    Updated: 2023/03/02 16:24:34 by grenaud-         ###   ########.fr        #
+#    Updated: 2023/03/02 17:39:15 by grenaud-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ _ERASE		=	\e[K
 
 # COMPILATION FLAGS
 
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -ggdb3
+CXXFLAGS		=	-Wall -Wextra -Werror -std=c++98 -ggdb3
 LFLAGS		=
 IFLAGS 		=	$(addprefix -I,$(IDIR))
 
@@ -74,7 +74,7 @@ CNT			=	1
 
 # COMMANDS
 
-CC			=	c++
+CXX			=	c++
 RM			=	rm -f
 RMDIR		=	rmdir
 MKDIR		=	mkdir
@@ -89,7 +89,7 @@ all:		$(NAME)
 
 $(NAME):	$(ODIR) echoname $(OBJS) echoendname
 			@printf "$(_BOLD)$(_WHITE)Compiling $(_YELLOW)everything$(_END)\n"
-			@$(CC) $(CFLAGS) $(IFLAGS) $(OBJS) -o $(NAME) $(LFLAGS)
+			@$(CXX) $(CXXFLAGS) $(IFLAGS) $(OBJS) -o $(NAME) $(LFLAGS)
 			@printf "$(_BOLD)$(_GREEN)OK! $(_END)$(_DIM)$(_WHITE)(./$(NAME))$(_END)\n\n"
 
 clean:
@@ -115,7 +115,7 @@ bonus:		all
 # IMPLICIT
 
 $(ODIR)%.o:	$(DIR)%.cpp
-			@$(CC) $(CFLAGS) $(IFLAGS) -c -o $@ $<
+			@$(CXX) $(CXXFLAGS) $(IFLAGS) -c -o $@ $<
 			@printf "$(_ERASE)\r"
 			@printf "$(_DIM)$(_YELLOW)$(subst $(DIR),,$<)$(_END)\n"
 			@for i in $$(seq 1 $(CNT)); \
