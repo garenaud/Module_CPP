@@ -64,20 +64,12 @@ PhoneBook	PhoneBook::del_one(PhoneBook pb, int count)
 {
 	int	i;
 
-	i = 0;
+	i = count;
 	std::cout << count << std::endl;
-	if (count > 0)
+	while (i > 0)
 	{
-		while (i < MAX)
-		{
-			if (i == count)
-				i++;
-			else
-			{
-				pb.contacts[i] = pb.contacts[i + 1];
-				i++;
-			}
-		}
+		pb.contacts[i] = pb.contacts[i - 1];
+		i--;
 	}
 	return (pb);
 }

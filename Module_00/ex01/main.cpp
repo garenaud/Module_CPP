@@ -17,10 +17,10 @@ int	main()
 	std::string	command;
 	PhoneBook pb;
 	int	i;
-	static int count;
+	int count;
 
-	count = 0;
 	i = 0;
+	count = 0;
 	while(42)
 	{
 		std::cout << "Enter a command (ADD / SEARCH / EXIT): ";
@@ -39,6 +39,8 @@ int	main()
 				{
  					pb = pb.del_one(pb, count);
 					count++;
+					if (count > MAX)
+						count = 0;
 					i = 0;
 				}
 				else if (command == "N")
